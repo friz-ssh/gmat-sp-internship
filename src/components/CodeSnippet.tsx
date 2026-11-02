@@ -1,7 +1,8 @@
 import { useState } from "react";
-import type { Snippet } from "../content/materials";
 
-export function CodeSnippet({ file, code }: Snippet) {
+type Props = { file: string; lang?: string; code: string };
+
+export function CodeSnippet({ file, code }: Props) {
   const [copied, setCopied] = useState(false);
 
   async function copy() {
